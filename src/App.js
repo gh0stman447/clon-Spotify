@@ -1,8 +1,9 @@
 import Logo from './assets/Logo2.svg';
+import loremIpsum, { LoremIpsum } from 'react-lorem-ipsum';
 
 function App() {
   return (
-    <div className='flex items-start'>
+    <div className='flex items-start bg-[#121212]'>
       <aside className='bg-black w-[256px] h-screen text-[#b2b2b2] flex flex-col sticky top-0'>
         <a href='#' className='text-white inline-block my-6 px-6 w-full'>
           <div className='flex items-center gap-2'>
@@ -173,7 +174,483 @@ function App() {
             </button>
           </div>
         </header>
-        <main></main>
+        <main className='text-white relative'>
+          <div className='h-[275px] bg-gradient-to-b from-[#1f1f1f] to-[#121212] absolute w-full'></div>
+          <div className='relative pt-6 pb-[48px] px-8 space-y-9'>
+            <div>
+              <div className='flex justify-between items-end mb-[18px]'>
+                <div>
+                  <h2 className='text-2xl font-semibold hover:underline'>
+                    <a href='#'>The state of music today</a>
+                  </h2>
+                </div>
+                <a
+                  href='#'
+                  className='uppercase text-xs font-semibold tracking-widest hover:underline text-[#b3b3b3] leading-6'
+                >
+                  see all
+                </a>
+              </div>
+              <div className='grid grid-cols-4 gap-5'>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/7f1d1d/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/365314/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/365e90/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/1c4a55/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div className='flex justify-between items-end mb-[18px]'>
+                <div>
+                  <h2 className='text-2xl font-semibold hover:underline'>
+                    <a href='#'>Focus</a>
+                  </h2>
+                  <p className='text-[#b3b3b3]'>Music to help you concentrate</p>
+                </div>
+                <a
+                  href='#'
+                  className='uppercase text-xs font-semibold tracking-widest hover:underline text-[#b3b3b3] leading-6'
+                >
+                  see all
+                </a>
+              </div>
+              <div className='grid grid-cols-4 gap-5'>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/6f12a2/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/b4bf15/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/ff1fff/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/111ddd/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div className='flex justify-between items-end mb-[18px]'>
+                <div>
+                  <h2 className='text-2xl font-semibold hover:underline'>
+                    <a href='#'>Lorem ipsum dolor sit </a>
+                  </h2>
+                </div>
+                <a
+                  href='#'
+                  className='uppercase text-xs font-semibold tracking-widest hover:underline text-[#b3b3b3] leading-6'
+                >
+                  see all
+                </a>
+              </div>
+              <div className='grid grid-cols-4 gap-5'>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/ffd111/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/dfdfdf/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/2d2d21/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+                <a
+                  href='#'
+                  className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                >
+                  <div className='relative'>
+                    <img
+                      src='https://fakeimg.pl/600/4324df/fff?text=Cover&font=lobster'
+                      className='rounded shadow-lg'
+                    />
+                    <buttom
+                      className='h-10 w-10 bg-[#1cb955] rounded-full shadow-xl absolute right-2 bottom-2 flex
+                      items-center justify-center hover:cursor-default duration-200 opacity-0 translate-y-3 
+                      group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class='w-6 h-6'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z'
+                        />
+                      </svg>
+                    </buttom>
+                  </div>
+                  <h3 className='mt-4 mb-1 font-semibold tracking-wide capitalize'>
+                    Playlist Title
+                  </h3>
+                  <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );
