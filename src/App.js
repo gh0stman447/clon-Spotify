@@ -131,7 +131,7 @@ function App() {
           </footer>
         </aside>
         <div className='flex-1'>
-          <header className='bg-[#070707] flex flex-1 py-3 px-8 justify-between sticky top-0 z-10'>
+          <header className='bg-[#070707] flex flex-1 py-3 px-8 justify-between sticky top-0 z-20'>
             <div className='flex gap-4'>
               <a href='#' className='text-[#969696] p-1 cursor-not-allowed'>
                 <svg
@@ -195,7 +195,7 @@ function App() {
                 <div className='grid grid-cols-4 gap-5'>
                   <a
                     href='#'
-                    className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group'
+                    className='p-4 rounded-md bg-[#181818] hover:bg-[#272727] duration-200 group relative'
                   >
                     <div className='relative'>
                       <img
@@ -227,6 +227,56 @@ function App() {
                       Playlist Title
                     </h3>
                     <p className='text-sm text-[#b3b3b3] line-clamp-2'>{LoremIpsum()}</p>
+                    <ul className='bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute top-9 left-9 cursor-default whitespace-nowrap divide-y divide-[#3e3e3e] hidden group-hover:block'>
+                      <li>
+                        <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default '>
+                          Add to Your Library
+                        </button>
+                      </li>
+                      <li className='relative'>
+                        <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default flex items-center justify-between'>
+                          Share
+                          <button>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              fill='none'
+                              viewBox='0 0 24 24'
+                              stroke-width='1.5'
+                              stroke='currentColor'
+                              class='w-4 h-4'
+                            >
+                              <path
+                                stroke-linecap='round'
+                                stroke-linejoin='round'
+                                d='m8.25 4.5 7.5 7.5-7.5 7.5'
+                              />
+                            </svg>
+                          </button>
+                        </button>
+                        <ul className='bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute top-9 left-9 cursor-default absolute top-0 left-full z-10'>
+                          <li>
+                            <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default '>
+                              Copy link to your playlist
+                            </button>
+                          </li>
+                          <li>
+                            <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default '>
+                              Embet playlist
+                            </button>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default '>
+                          About recommendations
+                        </button>
+                      </li>
+                      <li>
+                        <button className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] cursor-default '>
+                          Open in Desktop app
+                        </button>
+                      </li>
+                    </ul>
                   </a>
                   <a
                     href='#'
@@ -654,7 +704,7 @@ function App() {
           </main>
         </div>
       </div>
-      <a
+      <div
         href='#'
         className='bg-violet-700 bg-gradient-to-r from-[#af2896] to=[#509bf5] text-white py-8 px-8 flex justify-center justify-between items-center'
       >
@@ -667,7 +717,7 @@ function App() {
         <button className='text-[#2c77d0] text-[14px] bg-white py-3 px-[48px] font-semibold rounded-full uppercase leading-5 tracking-widest hover:scale-105'>
           Sign up free
         </button>
-      </a>
+      </div>
     </div>
   );
 }
