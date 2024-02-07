@@ -8,7 +8,7 @@ function App() {
         <aside
           id='sidebar'
           className='bg-black w-[256px] text-[#b2b2b2] flex fixed flex-col lg:sticky top-0 z-30 h-screen lg:h-auto -translate-x-full
-          lg:translate-x-0 target:translate-x-0 transition-transform peer'
+          lg:translate-x-0 target:translate-x-0 transition-transform peer overflow-hidden'
         >
           <a href='#' className='text-white inline-block my-6 px-6 w-full'>
             <div className='flex items-center gap-2'>
@@ -135,9 +135,9 @@ function App() {
         </aside>
         <a
           href='#'
-          className='fixed inset-0 bg-black z-20 cursor-default opacity-0 peer-target:opacity-50 lg:hidden transition-opacity'
+          className='fixed inset-0 bg-black z-20 cursor-default opacity-0 peer-target:opacity-50 lg:hidden transition-opacity pointer-events-none peer-target:pointer-events-auto'
         ></a>
-        <div className='flex-1'>
+        <div className='flex-1 overflow-auto'>
           <header className='bg-[#070707] flex flex-1 py-3 px-8 justify-between sticky top-0 z-20'>
             <div className='flex gap-4 items-center'>
               <a href='#sidebar' className='text-[#969696] p-1 inline-block lg:hidden -ml-1.5'>
