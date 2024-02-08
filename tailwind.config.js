@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
       screens: {
@@ -19,13 +19,7 @@ module.exports = {
       'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
       'playlists-tablet': 'repeat(auto-fill, minmax(266px, 1fr));',
       'playlists-desktop': 'repeat(auto-fill, minmax(180px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
-      'playlists-mobile': 'repeat(auto-fill, minmax(208px, 1fr));',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
