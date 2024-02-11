@@ -29,7 +29,7 @@ const menuItems = [
 ];
 const clickPosition = { x: null, y: null };
 
-export const PlayList = ({ classes, src, title, description }) => {
+export const PlayList = ({ classes, src, title, description, toggleScrolling }) => {
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
   const contextMenuRef = useRef(null);
 
@@ -42,6 +42,7 @@ export const PlayList = ({ classes, src, title, description }) => {
     contextMenuRef.current.style.left = `${clickPosition.x}px`;
   }
   useEffect(() => {
+    toggleScrolling(!isContextMenuOpen);
     if (isContextMenuOpen) {
       updateContextMenuPosition();
     }

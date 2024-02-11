@@ -58,7 +58,7 @@ const playLists = [
     description: LoremIpsum(),
   },
 ];
-export const TheMain = () => {
+export const TheMain = ({ toggleScrolling }) => {
   return (
     <main className='text-white relative'>
       <div className='h-[275px] bg-gradient-to-b from-[#1f1f1f] to-[#121212] absolute w-full'></div>
@@ -79,7 +79,7 @@ export const TheMain = () => {
           </div>
           <div className='grid sm:grid-cols-playlists-mobile md:grid-cols-playlists-tablet lg:grid-cols-playlists-desktop gap-5'>
             {playLists.map((playList) => (
-              <PlayList key={playList.title} {...playList} />
+              <PlayList key={playList.title} {...playList} toggleScrolling={toggleScrolling} />
             ))}
           </div>
         </div>
