@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { PlayListCover } from './PlayListCover';
 import { PlayListButtonPlay } from './PlayListButtonPlay';
 import { PlayListTitle } from './PlayListTitle';
@@ -27,17 +27,33 @@ const menuItems = [
     label: 'Open in Desktop app',
   },
 ];
-
-const menuClasses =
-  'bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute top-9 left-9 cursor-default whitespace-nowrap divide-y divide-[#3e3e3e]';
+const clickPosition = { x: null, y: null };
 
 export const PlayList = ({ classes, src, title, description }) => {
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
+  const contextMenuRef = useRef(null);
 
   const bgClasses = isContextMenuOpen ? 'bg-[#272727]' : 'bg-[#181818] hover:bg-[#272727]';
+  const menuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl fixed z-20
+    cursor-default whitespace-nowrap divide-y divide-[#3e3e3e]`;
 
-  const openContextMenu = (e) => {
-    e.preventDefault();
+  function updateContextMenuPosition() {
+    contextMenuRef.current.style.top = `${clickPosition.y}px`;
+    contextMenuRef.current.style.left = `${clickPosition.x}px`;
+  }
+  useEffect(() => {
+    if (isContextMenuOpen) {
+      updateContextMenuPosition();
+    }
+  });
+
+  const openContextMenu = (event) => {
+    event.preventDefault();
+
+    clickPosition.x = event.clientX;
+    clickPosition.y = event.clientY;
+    console.log(clickPosition);
+
     setIsContextMenuOpen(true);
   };
 
@@ -60,6 +76,7 @@ export const PlayList = ({ classes, src, title, description }) => {
       <PlayListDescription description={description} />
       {isContextMenuOpen && (
         <PlayListContextMenu
+          ref={contextMenuRef}
           classes={menuClasses}
           menuItems={menuItems}
           onClose={closeContextMenu}
