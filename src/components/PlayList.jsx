@@ -27,6 +27,7 @@ const menuItems = [
     label: 'Open in Desktop app',
   },
 ];
+
 const clickPosition = { x: null, y: null };
 
 export const PlayList = ({ classes, src, title, description, toggleScrolling }) => {
@@ -37,10 +38,29 @@ export const PlayList = ({ classes, src, title, description, toggleScrolling }) 
   const menuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl fixed z-20
     cursor-default whitespace-nowrap divide-y divide-[#3e3e3e]`;
 
-  function updateContextMenuPosition() {
-    contextMenuRef.current.style.top = `${clickPosition.y}px`;
-    contextMenuRef.current.style.left = `${clickPosition.x}px`;
+  function updateContextMenuHorizontalPosition() {
+    const menuWidth = contextMenuRef.current.offsetWidth;
+    const shouldMoveLeft = menuWidth > window.innerWidth - clickPosition.x;
+
+    contextMenuRef.current.style.left = shouldMoveLeft
+      ? `${clickPosition.x - menuWidth}px`
+      : `${clickPosition.x}px`;
   }
+
+  function updateContextMenuVerticalPosition() {
+    const menuHeight = contextMenuRef.current.offsetHeight;
+    const shouldMoveTop = menuHeight > window.innerHeight - clickPosition.y;
+
+    contextMenuRef.current.style.top = shouldMoveTop
+      ? `${clickPosition.y - menuHeight}px`
+      : `${clickPosition.y}px`;
+  }
+
+  function updateContextMenuPosition() {
+    updateContextMenuVerticalPosition();
+    updateContextMenuHorizontalPosition();
+  }
+
   useEffect(() => {
     toggleScrolling(!isContextMenuOpen);
     if (isContextMenuOpen) {
@@ -71,12 +91,12 @@ export const PlayList = ({ classes, src, title, description, toggleScrolling }) 
       document.removeEventListener('keydown', handleEsc);
     };
   });
+
   const openContextMenu = (event) => {
     event.preventDefault();
 
     clickPosition.x = event.clientX;
     clickPosition.y = event.clientY;
-    console.log(clickPosition);
 
     setIsContextMenuOpen(true);
   };
