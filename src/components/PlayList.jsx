@@ -48,6 +48,29 @@ export const PlayList = ({ classes, src, title, description, toggleScrolling }) 
     }
   });
 
+  useEffect(() => {
+    if (!isContextMenuOpen) return;
+
+    function handleClickAway(event) {
+      if (!contextMenuRef.current.contains(event.target) && closeContextMenu) {
+        closeContextMenu();
+      }
+    }
+
+    function handleEsc(event) {
+      if (event.keyCode === 27) {
+        closeContextMenu();
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickAway);
+    document.addEventListener('keydown', handleEsc);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickAway);
+      document.removeEventListener('keydown', handleEsc);
+    };
+  });
   const openContextMenu = (event) => {
     event.preventDefault();
 
@@ -76,12 +99,7 @@ export const PlayList = ({ classes, src, title, description, toggleScrolling }) 
       <PlayListTitle title={title} />
       <PlayListDescription description={description} />
       {isContextMenuOpen && (
-        <PlayListContextMenu
-          ref={contextMenuRef}
-          classes={menuClasses}
-          menuItems={menuItems}
-          onClose={closeContextMenu}
-        />
+        <PlayListContextMenu ref={contextMenuRef} classes={menuClasses} menuItems={menuItems} />
       )}
     </a>
   );
