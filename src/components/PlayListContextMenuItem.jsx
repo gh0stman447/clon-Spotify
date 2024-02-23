@@ -3,12 +3,13 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { PlayListContextMenu } from './PlayListContextMenu';
 
 export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
-  const [menuPositionXClass, setMenuPositionXClass] = useState('left-full');
-  const [menuPositionYClass, setMenuPositionYClass] = useState('top-0');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuState, setMenuState] = useState({
+    isOpen: false,
+    positionClasses: '',
+  });
   const menuItemRef = useRef(null);
 
-  const subMenuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute cursor-default absolute z-10 ${menuPositionYClass} ${menuPositionXClass}`;
+  const subMenuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute cursor-default absolute z-10 ${menuState.positionClasses}`;
 
   function getMenuPositionXClass() {
     const menuItem = menuItemRef.current;
@@ -30,14 +31,22 @@ export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
     return shouldMoveMenuUp ? 'bottom-0' : 'top-0';
   }
 
+  function getMenuPositionClasses() {
+    return `${getMenuPositionYClass()} ${getMenuPositionXClass()}`;
+  }
+
   function openMenu() {
-    setIsMenuOpen(true);
-    setMenuPositionXClass(getMenuPositionXClass());
-    setMenuPositionYClass(getMenuPositionYClass());
+    setMenuState({
+      isOpen: true,
+      positionClasses: getMenuPositionClasses(),
+    });
   }
 
   function closeMenu() {
-    setIsMenuOpen(false);
+    setMenuState({
+      isOpen: false,
+      positionClasses: '',
+    });
   }
 
   if (subMenuItems) {
@@ -50,7 +59,9 @@ export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
           >
             {label} <MdKeyboardArrowRight className='w-4 h-4' />
           </button>
-          {isMenuOpen && <PlayListContextMenu menuItems={subMenuItems} classes={subMenuClasses} />}
+          {menuState.isOpen && (
+            <PlayListContextMenu menuItems={subMenuItems} classes={subMenuClasses} />
+          )}
         </li>
       </>
     );

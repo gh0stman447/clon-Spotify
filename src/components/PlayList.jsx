@@ -18,22 +18,6 @@ const menuItems = [
       {
         label: 'Embed playlist',
       },
-      {
-        label: 'Embed playlist1',
-      },
-      {
-        label: 'Embed playlist2',
-      },
-      {
-        label: 'Embed playlist3',
-      },
-
-      {
-        label: 'Embed playlist4',
-      },
-      {
-        label: 'Embed playlist5',
-      },
     ],
   },
   {
