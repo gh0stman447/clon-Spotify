@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { PlayListContextMenu } from './PlayListContextMenu';
 
@@ -8,6 +8,7 @@ export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
     positionClasses: '',
   });
   const menuItemRef = useRef(null);
+  let closeMenuTimer = null;
 
   const subMenuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute cursor-default absolute z-10 ${menuState.positionClasses}`;
 
@@ -36,6 +37,12 @@ export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
   }
 
   function openMenu() {
+    if (closeMenuTimer) {
+      stopCloseMenuTimer();
+
+      return;
+    }
+
     setMenuState({
       isOpen: true,
       positionClasses: getMenuPositionClasses(),
@@ -49,10 +56,25 @@ export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
     });
   }
 
+  function startCloseMenuTimer() {
+    closeMenuTimer = setTimeout(closeMenu, 100);
+  }
+
+  function stopCloseMenuTimer() {
+    clearTimeout(closeMenuTimer);
+  }
+
+  useEffect(() => stopCloseMenuTimer);
+
   if (subMenuItems) {
     return (
       <>
-        <li className='relative' onMouseEnter={openMenu} onMouseLeave={closeMenu} ref={menuItemRef}>
+        <li
+          className='relative'
+          onMouseEnter={openMenu}
+          onMouseLeave={startCloseMenuTimer}
+          ref={menuItemRef}
+        >
           <button
             className='w-full p-3 text-left hover:text-white hover:bg-[#3e3e3e] 
             cursor-default flex items-center justify-between'
