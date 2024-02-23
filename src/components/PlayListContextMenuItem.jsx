@@ -3,25 +3,37 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { PlayListContextMenu } from './PlayListContextMenu';
 
 export const PlayListContextMenuItem = ({ children: label, subMenuItems }) => {
-  const [menuPositionClass, setMenuPositionClass] = useState('left-full');
+  const [menuPositionXClass, setMenuPositionXClass] = useState('left-full');
+  const [menuPositionYClass, setMenuPositionYClass] = useState('top-0');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItemRef = useRef(null);
 
-  const subMenuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute cursor-default absolute top-0  z-10 ${menuPositionClass}`;
+  const subMenuClasses = `bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-xl absolute cursor-default absolute z-10 ${menuPositionYClass} ${menuPositionXClass}`;
 
-  function getMenuPositionClass() {
+  function getMenuPositionXClass() {
     const menuItem = menuItemRef.current;
-    const menuWidth = menuItem.offsetWidth;
+    const menuItemWidth = menuItem.offsetWidth;
     const windowWidth = window.innerWidth;
-    const menuItemEndCoordinate = menuItem.getBoundingClientRect().right;
-    const shouldMoveMenuLeft = menuWidth > windowWidth - menuItemEndCoordinate;
+    const menuItemRightCoordX = menuItem.getBoundingClientRect().right;
+    const shouldMoveMenuLeft = menuItemWidth > windowWidth - menuItemRightCoordX;
 
     return shouldMoveMenuLeft ? 'right-full' : 'left-full';
   }
 
+  function getMenuPositionYClass() {
+    const windowHeight = window.innerHeight;
+    const menuItem = menuItemRef.current;
+    const menuHeight = menuItem.offsetHeight * subMenuItems.length;
+    const menuItemBottomCoordY = menuItem.getBoundingClientRect().bottom;
+    const shouldMoveMenuUp = menuHeight > windowHeight - menuItemBottomCoordY;
+
+    return shouldMoveMenuUp ? 'bottom-0' : 'top-0';
+  }
+
   function openMenu() {
     setIsMenuOpen(true);
-    setMenuPositionClass(getMenuPositionClass());
+    setMenuPositionXClass(getMenuPositionXClass());
+    setMenuPositionYClass(getMenuPositionYClass());
   }
 
   function closeMenu() {
